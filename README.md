@@ -1,8 +1,24 @@
 # Data analysis in the e-shop
-## URL of endpoint:
+
+## How to run the e-shop project
+
+### Note: Docker installed required
+if you need to install Docker, check: 
+`https://docs.docker.com/get-docker/` 
+
+1. Run the migrations:
+`$ docker-compose run web python manage.py migrate`
+
+2. Fill the database with csv data:
+`$ docker-compose run web python manage.py csv_load data`
+
+3. Run the docker:
+`$ docker-compose up`
+
+4. Call the endpoint from the browser using the URL:
 http://127.0.0.1:8000/api/summary/2019-08-01
 
-## Endpoint response:
+5. Check if you can see the expected response:
 `response_json = {
     "items": 2895,
     "customers": 9,
@@ -21,21 +37,6 @@ http://127.0.0.1:8000/api/summary/2019-08-01
         }
     }
 }`
-
-## how to run the e-shop project
-1. Run the migrations
-`$ docker-compose run web python manage.py migrate`
-
-2. Fill the database with csv data
-`$ docker-compose run web python manage.py csv_load data`
-
-3. Run the docker:
-`$ docker-compose up`
-
-4. Use the endpoint from browser
-`$ http://127.0.0.1:8000/api/summary/2019-08-01`
-
-5. Check if you can see json response.
 
 ## Unit tests
 1. to run the unit tests use command:
