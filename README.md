@@ -1,10 +1,10 @@
 # Data analysis in the e-shop
 
-## How to run the e-shop project
-
 ### Note: Docker installed required
 if you need to install Docker, check: 
 `https://docs.docker.com/get-docker/` 
+
+## How to run the e-shop project
 
 1. Run the migrations:
 `$ docker-compose run web python manage.py migrate`
